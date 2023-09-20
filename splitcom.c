@@ -7,13 +7,13 @@ char **splitcom(char *ligne)
 	char *split = NULL, *tmpp = NULL;
 	char **commande = NULL;
 	int cpteur = 0, j = 0;
-	
+
 	if (!ligne)
-		return(NULL);
+		return (NULL);
 	tmpp = _strdup(ligne);
 
 	split = strtok(tmpp, DELM); /*DELIM: DELM (\t\n) il faut etre declare en shell.h*/
-	
+
 	if (split == NULL)
 	{
 		free(ligne); ligne = NULL;
@@ -38,11 +38,11 @@ char **splitcom(char *ligne)
 	split = strtok(ligne, DELM);
 	while (split)
 	{
-		commande[j]= _strdup(split);
+		commande[j] = _strdup(split);
 		split = strtok(NULL, DELM);
 		j++;
 	}
 	free(ligne), ligne = NULL;
-	commande[j] =NULL;
+	commande[j] = NULL;
 	return (commande);
 }
