@@ -1,5 +1,7 @@
 #include "shell.h"
 /*
+ * freearrforstrings - free arr for strings
+ * Return: NULL
  * Sign by Rida and Imane
  */
 void freearrforstrings(char **array)
