@@ -10,8 +10,8 @@ char *read_com(void)
 	size_t leng = 0;
 	ssize_t N;
 
-	if (isatty(STDLINE_FILEND))
-		write(STDOUT_FILEND, "$ ", 2);
+	if (isatty(STDIN_FILENO))
+		write(STDOUT_FILENO, "$ ", 2);
 	N = getline(&ligne, &leng, stdin);
 	if (N == -1)
 	{

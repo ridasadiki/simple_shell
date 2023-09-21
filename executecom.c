@@ -1,6 +1,6 @@
 #include "shell.h"
 
-int _executecom(char **commande, char **ar);
+int _executecom(char **commande, char **ar)
 {
 
 	pid_t chil;
@@ -9,7 +9,7 @@ int _executecom(char **commande, char **ar);
 	chil = fork();
 	if (chil == 0)
 	{
-		if (execve(commande[0], commande, envir) == -1)
+		if (execve(commande[0], commande, environ) == -1)
 		{
 			perror(ar[0]);
 			freearrforstrings(commande);
@@ -21,5 +21,5 @@ int _executecom(char **commande, char **ar);
 		waitpid(chil, &statu, 0);
 		freearrforstrings(commande);
 	}
-	return(WEXITSTATUS(statu))
+	return (WEXITSTATUS(statu));
 }

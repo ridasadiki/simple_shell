@@ -9,7 +9,7 @@
  */
 int main(int c, char **ar)
 {
-	char *line = NULL, **commande = NULL;
+	char *ligne = NULL, **commande = NULL;
 	int statu = 0;
 	(void) c;
 
@@ -19,8 +19,8 @@ int main(int c, char **ar)
 		ligne = read_com();
 		if (ligne == NULL)  /* this mean reache end of file until user use , Ctrl + D*/
 		{
-			if (isatty(STDLINE_FILEND))
-				write(STDOUT_FILEND, "\n", 1);
+			if (isatty(STDIN_FILENO))
+				write(STDOUT_FILENO, "\n", 1);
 			return (statu);
 		}
 
@@ -29,6 +29,6 @@ int main(int c, char **ar)
 		if (!commande)   /*if user did not write a charc, ask him again to ..*/
 			continue;
 
-		statu = _executecom(command, ar);
+		statu = _executecom(commande, ar);
 	}
 }

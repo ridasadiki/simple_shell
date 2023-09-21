@@ -1,8 +1,10 @@
+#ifndef _SHELL_H
+#define _SHELL_H
+
 #include <stdio.h>
 #include <stdlib.h>
 #include <string.h>
 #include <unistd.h>
-#include <sys/type.h>
 #include <sys/wait.h>
 #include <sys/stat.h>
 #include <errno.h>
@@ -10,7 +12,7 @@
 
 
 #define DELM " \t\n"
-extern char **envir;
+extern char **environ;
 
 
 char *read_com(void);
@@ -22,5 +24,6 @@ char *_strcpy(char *dest, char *src);
 char *_strdup(const char *str);
 char *_strcat(char *dest, char *src);
 
+void freearrforstrings(char **array);
 
 #endif
