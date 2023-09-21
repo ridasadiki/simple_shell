@@ -1,5 +1,8 @@
 #include "shell.h"
-/*
+/**
+ * splitcom - split
+ * @ligne: new ligne
+ * Return: commande
  * Project done by Rida and imane
  */
 char **splitcom(char *ligne)
@@ -11,22 +14,20 @@ char **splitcom(char *ligne)
 	if (!ligne)
 		return (NULL);
 	tmpp = _strdup(ligne);
-
-	split = strtok(tmpp, DELM); /*DELIM: DELM (\t\n) il faut etre declare en shell.h*/
+	split = strtok(tmpp, DELM);
 
 	if (split == NULL)
 	{
-		free(ligne); ligne = NULL;
-		free(tmpp); tmpp = NULL;
+		free(ligne), ligne = NULL;
+		free(tmpp), tmpp = NULL;
 		return (NULL);
 	}
-
 	while (split)
 	{
 		cpteur++;
 		split = strtok(NULL, DELM);
 	}
-	free(tmpp); tmpp = NULL;
+	free(tmpp), tmpp = NULL;
 
 	commande = malloc(sizeof(char *) * (cpteur + 1));
 	if (!commande)
@@ -34,7 +35,6 @@ char **splitcom(char *ligne)
 		free(ligne), ligne = NULL;
 		return (NULL);
 	}
-
 	split = strtok(ligne, DELM);
 	while (split)
 	{

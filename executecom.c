@@ -1,5 +1,11 @@
 #include "shell.h"
-
+/**
+ * _executecom - execute
+ * @ar: array
+ * @commande: cmd
+ * Return: WEXISTUTUS
+ * Project done by Rida and Imane
+ */
 int _executecom(char **commande, char **ar)
 {
 

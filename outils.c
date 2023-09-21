@@ -1,8 +1,8 @@
 #include "shell.h"
-/*
+/**
  * freearrforstrings - free arr for strings
+ * @array: arrayfr
  * Return: NULL
- * Sign by Rida and Imane
  */
 void freearrforstrings(char **array)
 {
@@ -21,30 +21,30 @@ void freearrforstrings(char **array)
 }
 
 /**
- * strdup - duplicat a string
+ * _strdup - duplicat a string
  * @str: strings charact
  * Return: new_str
  */
 
 char *_strdup(const char *str)
 {
-        char *new_str;
-        size_t leng = 0, j;
+	char *new_str;
+	size_t leng = 0, j;
 
-        if (str == NULL)
-                return (NULL);
+	if (str == NULL)
+		return (NULL);
 
-        while (str[leng] != '\0')
-        {
-                leng++;
-        }
-        new_str = (char *)malloc((leng + 1) * sizeof(char));
+	while (str[leng] != '\0')
+	{
+		leng++;
+	}
+	new_str = (char *)malloc((leng + 1) * sizeof(char));
 
-        if (new_str == NULL)
-                return (NULL);
+	if (new_str == NULL)
+		return (NULL);
 
-        for (j = 0; j <= leng; j++)
-                new_str[j] = str[j];
+	for (j = 0; j <= leng; j++)
+		new_str[j] = str[j];
 
-        return (new_str);
+	return (new_str);
 }

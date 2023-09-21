@@ -1,7 +1,8 @@
 #include "shell.h"
-/*
- * read_com : Read the cmd from stdln getline
- * Return : ligne
+/**
+ * read_com - Read the cmd from stdln getline
+ *
+ * Return: ligne
  * Sign by Rida and Imane
  */
 char *read_com(void)

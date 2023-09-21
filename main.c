@@ -1,10 +1,10 @@
 #include "shell.h"
 
-/*
+/**
  * main - Simple shell for the fonction main
  * @c: num of arg
  * @ar: args
- * return: 0 always(succ)
+ * Return: 0 always(succ)
  * Sign by Rida and Imane
  */
 int main(int c, char **ar)
@@ -17,7 +17,7 @@ int main(int c, char **ar)
 	while (1)
 	{
 		ligne = read_com();
-		if (ligne == NULL)  /* this mean reache end of file until user use , Ctrl + D*/
+		if (ligne == NULL)  /*this mean till end of file until user use ,Ctrl + D*/
 		{
 			if (isatty(STDIN_FILENO))
 				write(STDOUT_FILENO, "\n", 1);
